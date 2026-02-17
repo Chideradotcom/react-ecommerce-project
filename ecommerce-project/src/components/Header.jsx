@@ -5,7 +5,11 @@ import SearchIconImage from "../assets/images/icons/search-icon.png"
 import LogoWhiteImage from "../assets/images/logo-white.png"
 import MobileLogoWhiteImage from "../assets/images/mobile-logo-white.png"
 
-export function Header() {
+export function Header({ cart }) {
+  let totalQuantity = 0
+  cart.forEach((cartItem) => {
+    totalQuantity += cartItem.quantity
+  })
   return (
     <div className="header">
       <div className="left-section">
@@ -30,7 +34,7 @@ export function Header() {
 
         <NavLink className={({ isActive }) => `cart-link header-link ${isActive ? 'active' : ''}`} to="/checkout">
           <img className="cart-icon" src={CartIconImage} />
-          <div className="cart-quantity">3</div>
+          <div className="cart-quantity">{totalQuantity}</div>
           <div className="cart-text">Cart</div>
         </NavLink>
       </div>

@@ -32,7 +32,7 @@ export function TrackingPage({ cart }) {
 
   const timePassedMs = dayjs().valueOf() - order.orderTimeMs;
 
-  let deliveryPercent = (timePassedMs / totalDeliveryTimeMs) * 100;
+  let deliveryPercent = (timePassedMs / totalDeliveryTimeMs) * 0.60;
 
   if(deliveryPercent > 100){
     deliveryPercent = 100

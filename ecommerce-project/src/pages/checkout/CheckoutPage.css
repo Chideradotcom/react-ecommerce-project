@@ -57,6 +57,10 @@
   padding-bottom: 5px;
 }
 
+.checkout-page .quantity-textbox{
+  width: 50px;
+}
+
 @media (max-width: 1000px) {
   .checkout-page .payment-summary {
     /* grid-row: 1 means this element will be placed into row

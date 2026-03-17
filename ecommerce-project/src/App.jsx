@@ -9,6 +9,8 @@ import { TrackingPage } from "./pages/TrackingPage";
 import { Error } from "./pages/Error";
 import "./App.css";
 
+window.axios=axios
+
 function App() {
   const [cart, setCart] = useState([]);
 
@@ -24,7 +26,7 @@ function App() {
     <Routes>
       <Route index element={<HomePage cart={cart} loadCart={loadCart}/>} />
       <Route path="checkout" element={<CheckoutPage cart={cart} loadCart={loadCart}/>} />
-      <Route path="orders" element={<OrdersPage cart={cart} />} />
+      <Route path="orders" element={<OrdersPage cart={cart} loadCart={loadCart}/>} />
       <Route
         path="tracking/:orderId/:productId"
         element={<TrackingPage cart={cart} />}

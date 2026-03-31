@@ -12,7 +12,6 @@ export function Header({ cart }) {
   const [search, setSearch] = useState(searchText || '')
   const navigate = useNavigate()
 
-  
   const updateSearchInput = (event)=>{
     setSearch(event.target.value)
   }
